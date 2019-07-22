@@ -1,0 +1,69 @@
+[19/07/12 14:15:36][INFO][org.hibernate.Version-45] HHH000412: Hibernate Core {5.2.17.Final}
+[19/07/12 14:15:36][INFO][org.hibernate.cfg.Environment-213] HHH000206: hibernate.properties not found
+[19/07/12 14:15:36][INFO][org.hibernate.annotations.common.reflection.java.JavaReflectionManager-66] HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+[19/07/12 14:15:36][WARN][org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl-73] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[19/07/12 14:15:36][INFO][org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl-129] HHH10001005: using driver [com.microsoft.sqlserver.jdbc.SQLServerDriver] at URL [jdbc:sqlserver://localhost:1433;databaseName=shopweb1]
+[19/07/12 14:15:36][INFO][org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl-138] HHH10001001: Connection properties: {user=sa, password=****, pool_size=8}
+[19/07/12 14:15:36][INFO][org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl-143] HHH10001003: Autocommit mode: false
+[19/07/12 14:15:36][INFO][org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PooledConnections-281] HHH000115: Hibernate connection pool size: 20 (min=1)
+[19/07/12 14:19:29][INFO][org.hibernate.Version-45] HHH000412: Hibernate Core {5.2.17.Final}
+[19/07/12 14:19:29][INFO][org.hibernate.cfg.Environment-213] HHH000206: hibernate.properties not found
+[19/07/12 14:19:29][INFO][org.hibernate.annotations.common.reflection.java.JavaReflectionManager-66] HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+[19/07/12 14:19:30][WARN][org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl-73] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[19/07/12 14:19:30][INFO][org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl-129] HHH10001005: using driver [com.microsoft.sqlserver.jdbc.SQLServerDriver] at URL [jdbc:sqlserver://localhost:1433;databaseName=shopweb1]
+[19/07/12 14:19:30][INFO][org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl-138] HHH10001001: Connection properties: {user=sa, password=****, pool_size=8}
+[19/07/12 14:19:30][INFO][org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl-143] HHH10001003: Autocommit mode: false
+[19/07/12 14:19:30][INFO][org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PooledConnections-281] HHH000115: Hibernate connection pool size: 20 (min=1)
+[19/07/12 14:19:30][INFO][org.hibernate.dialect.Dialect-157] HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
+[19/07/12 14:19:31][INFO][org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl-47] HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@76b0ae1b] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+[19/07/12 14:19:31][WARN][org.hibernate.engine.jdbc.spi.SqlExceptionHelper-129] SQL Error: 515, SQLState: 23000
+[19/07/12 14:19:31][ERROR][org.hibernate.engine.jdbc.spi.SqlExceptionHelper-131] 無法插入 NULL 值到資料行 'productId'，資料表 'shopweb1.dbo.Image'; 資料行不得有 Null。INSERT 失敗。
+[19/07/12 14:19:31][INFO][org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl-233] HHH10001008: Cleaning up connection pool [jdbc:sqlserver://localhost:1433;databaseName=shopweb1]
+[19/07/12 14:23:27][INFO][org.hibernate.Version-45] HHH000412: Hibernate Core {5.2.17.Final}
+[19/07/12 14:23:27][INFO][org.hibernate.cfg.Environment-213] HHH000206: hibernate.properties not found
+[19/07/12 14:23:27][INFO][org.hibernate.annotations.common.reflection.java.JavaReflectionManager-66] HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+[19/07/12 14:23:27][WARN][org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl-73] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[19/07/12 14:23:27][INFO][org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl-129] HHH10001005: using driver [com.microsoft.sqlserver.jdbc.SQLServerDriver] at URL [jdbc:sqlserver://localhost:1433;databaseName=shopweb1]
+[19/07/12 14:23:27][INFO][org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl-138] HHH10001001: Connection properties: {user=sa, password=****, pool_size=8}
+[19/07/12 14:23:27][INFO][org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl-143] HHH10001003: Autocommit mode: false
+[19/07/12 14:23:27][INFO][org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PooledConnections-281] HHH000115: Hibernate connection pool size: 20 (min=1)
+[19/07/12 14:23:27][INFO][org.hibernate.dialect.Dialect-157] HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
+[19/07/12 14:23:28][INFO][org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl-47] HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@76b0ae1b] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+[19/07/12 14:23:28][WARN][org.hibernate.engine.jdbc.spi.SqlExceptionHelper-129] SQL Error: 515, SQLState: 23000
+[19/07/12 14:23:28][ERROR][org.hibernate.engine.jdbc.spi.SqlExceptionHelper-131] 無法插入 NULL 值到資料行 'productId'，資料表 'shopweb1.dbo.Image'; 資料行不得有 Null。INSERT 失敗。
+[19/07/12 14:23:28][INFO][org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl-233] HHH10001008: Cleaning up connection pool [jdbc:sqlserver://localhost:1433;databaseName=shopweb1]
+[19/07/12 14:28:14][INFO][org.hibernate.Version-45] HHH000412: Hibernate Core {5.2.17.Final}
+[19/07/12 14:28:14][INFO][org.hibernate.cfg.Environment-213] HHH000206: hibernate.properties not found
+[19/07/12 14:28:14][INFO][org.hibernate.annotations.common.reflection.java.JavaReflectionManager-66] HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+[19/07/12 14:28:14][WARN][org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl-73] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[19/07/12 14:28:15][INFO][org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl-129] HHH10001005: using driver [com.microsoft.sqlserver.jdbc.SQLServerDriver] at URL [jdbc:sqlserver://localhost:1433;databaseName=shopweb1]
+[19/07/12 14:28:15][INFO][org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl-138] HHH10001001: Connection properties: {user=sa, password=****, pool_size=8}
+[19/07/12 14:28:15][INFO][org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl-143] HHH10001003: Autocommit mode: false
+[19/07/12 14:28:15][INFO][org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PooledConnections-281] HHH000115: Hibernate connection pool size: 20 (min=1)
+[19/07/12 14:28:15][INFO][org.hibernate.dialect.Dialect-157] HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
+[19/07/12 14:28:15][INFO][org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl-47] HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@76b0ae1b] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+[19/07/12 14:28:16][WARN][org.hibernate.engine.jdbc.spi.SqlExceptionHelper-129] SQL Error: 515, SQLState: 23000
+[19/07/12 14:28:16][ERROR][org.hibernate.engine.jdbc.spi.SqlExceptionHelper-131] 無法插入 NULL 值到資料行 'productId'，資料表 'shopweb1.dbo.Image'; 資料行不得有 Null。INSERT 失敗。
+[19/07/12 14:28:16][INFO][org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl-233] HHH10001008: Cleaning up connection pool [jdbc:sqlserver://localhost:1433;databaseName=shopweb1]
+[19/07/12 14:34:55][INFO][org.hibernate.Version-45] HHH000412: Hibernate Core {5.2.17.Final}
+[19/07/12 14:34:55][INFO][org.hibernate.cfg.Environment-213] HHH000206: hibernate.properties not found
+[19/07/12 14:34:56][INFO][org.hibernate.annotations.common.reflection.java.JavaReflectionManager-66] HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+[19/07/12 14:34:56][WARN][org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl-73] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[19/07/12 14:34:56][INFO][org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl-129] HHH10001005: using driver [com.microsoft.sqlserver.jdbc.SQLServerDriver] at URL [jdbc:sqlserver://localhost:1433;databaseName=shopweb1]
+[19/07/12 14:34:56][INFO][org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl-138] HHH10001001: Connection properties: {user=sa, password=****, pool_size=8}
+[19/07/12 14:34:56][INFO][org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl-143] HHH10001003: Autocommit mode: false
+[19/07/12 14:34:56][INFO][org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PooledConnections-281] HHH000115: Hibernate connection pool size: 20 (min=1)
+[19/07/12 14:34:56][INFO][org.hibernate.dialect.Dialect-157] HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
+[19/07/12 14:34:57][INFO][org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl-47] HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@76b0ae1b] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+[19/07/12 14:34:58][INFO][org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl-233] HHH10001008: Cleaning up connection pool [jdbc:sqlserver://localhost:1433;databaseName=shopweb1]
+[19/07/12 16:48:51][INFO][org.hibernate.Version-45] HHH000412: Hibernate Core {5.2.17.Final}
+[19/07/12 16:48:51][INFO][org.hibernate.cfg.Environment-213] HHH000206: hibernate.properties not found
+[19/07/12 16:48:51][INFO][org.hibernate.annotations.common.reflection.java.JavaReflectionManager-66] HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+[19/07/12 16:48:51][WARN][org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl-73] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[19/07/12 16:48:51][INFO][org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl-129] HHH10001005: using driver [com.microsoft.sqlserver.jdbc.SQLServerDriver] at URL [jdbc:sqlserver://localhost:1433;databaseName=shopweb1]
+[19/07/12 16:48:51][INFO][org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl-138] HHH10001001: Connection properties: {user=sa, password=****, pool_size=8}
+[19/07/12 16:48:51][INFO][org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl-143] HHH10001003: Autocommit mode: false
+[19/07/12 16:48:51][INFO][org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PooledConnections-281] HHH000115: Hibernate connection pool size: 20 (min=1)
+[19/07/12 16:48:51][INFO][org.hibernate.dialect.Dialect-157] HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
+[19/07/12 16:48:52][INFO][org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl-47] HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@76b0ae1b] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+[19/07/12 16:48:52][INFO][org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl-233] HHH10001008: Cleaning up connection pool [jdbc:sqlserver://localhost:1433;databaseName=shopweb1]
