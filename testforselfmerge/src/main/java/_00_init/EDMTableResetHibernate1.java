@@ -100,7 +100,6 @@ public class EDMTableResetHibernate1 {
 					book.setProductNo(token[6].trim());
 					book.setStock(Integer.parseInt(token[7].trim()));
 					book.setCategory(token[8].trim());
-					
 					session.save(book);
 					System.out.println("新增一筆Book紀錄成功");
 				}

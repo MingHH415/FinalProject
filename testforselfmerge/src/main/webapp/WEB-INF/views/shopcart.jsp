@@ -74,15 +74,18 @@
 			<div class="col-md-4 col-xs-12 col-sm-4">
 			<!-- Cart -->
 			<ul class="top-menu text-right list-inline">
-	          <li class="dropdown cart-nav dropdown-slide"><a href="#"
-							class="dropdown-toggle" data-toggle="dropdown"
+
+	          <li class="dropdown cart-nav dropdown-slide">
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown"
 							data-hover="dropdown"><i class="tf-ion-android-cart"></i>Cart</a>
 							<div class="dropdown-menu cart-dropdown">
+							<c:forEach var='ctest' items="${shopCart}">
+								購物車明細 廠商${ctest.key}的所有商品
 								<!-- Cart Item -->
-								<c:forEach var='test' items='${now.cartitemmap}'>
+             			     <c:forEach var='test' items='${ctest.value.cartitemmap}'>
 								<div class="media">
 									<a class="pull-left" href="#"> 
-									<img class="media-object"src="images/shop/cart/cart-2.jpg" alt="image" />
+									<img class="media-object"src="<c:url value='/getPicture/${test.value.productBean.productId}' />" alt="image" />
 									</a>
 									<div class="media-body">
 										<h4 class="media-heading">
@@ -93,42 +96,37 @@
 										<span>${test.value.price}</span>
 										</div>
 										<h5>
-											<strong>$${test.value.quantity*test.value.price}</strong>
+											<strong>${test.value.quantity*test.value.price}</strong>
 										</h5>
 									</div>
-									<a href="#" class="remove"><i class="tf-ion-close"></i></a>
+									<a href="<c:url value='/removefromcart?removeId=${test.value.productBean.productId}'/>" class="remove"><i class="tf-ion-close"></i></a>
 									<c:set value="${sum +test.value.quantity*test.value.price}"
 									var="sum" />
 								</div>
 									</c:forEach>
 								<!-- / Cart Item -->
+								</c:forEach>
 								<div class="cart-summary">
 									<span>Total</span> <span class="total-price">${sum}</span>
 								</div>
 								<ul class="text-center cart-buttons">
-									<li><a href="" class="btn btn-small">View Cart</a></li>
-									<li><a href="" class="btn btn-small btn-solid-border">Checkout</a></li>
+									<li><a href="<spring:url value='/viewtocart' />" class="btn btn-small">View Cart</a></li>
 								</ul>
-							</div></li><!-- / Cart -->
+							</div></li>
+							<!-- / Cart -->
 
 	          <!-- Search -->
 	          <li class="dropdown search dropdown-slide">
 	            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"><i class="tf-ion-ios-search-strong"></i> Search</a>
 	            <ul class="dropdown-menu search-dropdown">
 	            </ul>
-	          </li><!-- / Search -->
+	          </li>
+	          <!-- / Search -->
 
-	          <!-- Languages -->
-	          <li class="commonSelect">
-	          	<select class="form-control">
-                    <option>EN</option>
-                    <option>DE</option>
-                    <option>FR</option>
-                    <option>ES</option>
-                </select>
-	          </li><!-- / Languages -->
+	
 
-	        </ul><!-- / .nav .navbar-nav .navbar-right -->
+	        </ul>
+	        <!-- / .nav .navbar-nav .navbar-right -->
 			</div>
 		</div>
 	</div>
@@ -154,129 +152,61 @@
 	      <div id="navbar" class="navbar-collapse collapse text-center">
 	        <ul class="nav navbar-nav">
 
-	          <!-- Home -->
+	         <!-- Home首頁 -->
 	          <li class="dropdown ">
 	            <a href="index.html">Home</a>
 	          </li><!-- / Home -->
 
 
-	          <!-- Elements -->
+	       <!-- 商品 -->   
 	          <li class="dropdown dropdown-slide">
-	            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="350" role="button" aria-haspopup="true" aria-expanded="false">Shop <span class="tf-ion-ios-arrow-down"></span></a>
-	            <div class="dropdown-menu">
-	              <div class="row">
-
-	                <!-- Basic -->
-	                <div class="col-lg-6 col-md-6 mb-sm-3">
-	                	<ul>
-							<li class="dropdown-header">Pages</li>
+	            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="350" role="button" aria-haspopup="true" aria-expanded="false">商品 <span class="tf-ion-ios-arrow-down"></span></a>
+	                	<ul class="dropdown-menu">
+							<li class="dropdown-header">商品</li>
 							<li role="separator" class="divider"></li>
-							<li><a href="shop.html">Shop</a></li>
-							<li><a href="checkout.html">Checkout</a></li>
-							<li><a href="cart.html">Cart</a></li>
-							<li><a href="pricing.html">Pricing</a></li>
-							<li><a href="confirmation.html">Confirmation</a></li>
-	                		
+							<li><a href="#要放JSP網址">全部商品</a></li>
+							<li><a href="#要放JSP網址">廠牌搜索</a></li>
+							<li><a href="#要放JSP網址">比較商品</a></li>
+							<li><a href="#要放JSP網址">進階搜索</a></li>
 	                	</ul>
-	                </div>
+	              
+			</li>
+<!-- / 商品 -->	
 
-	                <!-- Layout -->
-	                <div class="col-lg-6 col-md-6 mb-sm-3">
-	                	<ul>
-		                  <li class="dropdown-header">Layout</li>
-		                  <li role="separator" class="divider"></li>
-		                  <li><a href="product-single.html">Product Details</a></li>
-		                  <li><a href="shop-sidebar.html">Shop With Sidebar</a></li>
-	                		
-	                	</ul>
-	                </div>
-
-	              </div><!-- / .row -->
-	            </div><!-- / .dropdown-menu -->
-	          </li><!-- / Elements -->
-
-
-	          <!-- Pages -->
-	          <li class="dropdown full-width dropdown-slide">
-	            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="350" role="button" aria-haspopup="true" aria-expanded="false">Pages <span class="tf-ion-ios-arrow-down"></span></a>
-	            <div class="dropdown-menu">
-	              	<div class="row">
-
-		                <!-- Introduction -->
-		                <div class="col-sm-3 col-xs-12">
-		                	<ul>
-								<li class="dropdown-header">Introduction</li>
-								<li role="separator" class="divider"></li>
-								<li><a href="contact.html">Contact Us</a></li>
-								<li><a href="about.html">About Us</a></li>
-								<li><a href="404.html">404 Page</a></li>
-								<li><a href="coming-soon.html">Coming Soon</a></li>
-								<li><a href="faq.html">FAQ</a></li>
-		                	</ul>
-		                </div>
-
-		                <!-- Contact -->
-		                <div class="col-sm-3 col-xs-12">
-		                	<ul>
-								<li class="dropdown-header">Dashboard</li>
-								<li role="separator" class="divider"></li>
-								<li><a href="dashboard.html">User Interface</a></li>
-								<li><a href="order.html">Orders</a></li>
-								<li><a href="address.html">Address</a></li>
-								<li><a href="profile-details.html">Profile Details</a></li>
-		                	</ul>
-		                </div>
-
-		                <!-- Utility -->
-		                <div class="col-sm-3 col-xs-12">
-		                	<ul>
-								<li class="dropdown-header">Utility</li>
-								<li role="separator" class="divider"></li>
-								<li><a href="login.html">Login Page</a></li>
-								<li><a href="signin.html">Signin Page</a></li>
-								<li><a href="forget-password.html">Forget Password</a></li>
-		                	</ul>
-		                </div>
-
-		                <!-- Mega Menu -->
-		                <div class="col-sm-3 col-xs-12">
-		                	<a href="shop.html">
-			                	<img class="img-responsive" src="images/shop/header-img.jpg" alt="menu image" />
-		                	</a>
-		                </div>
-	              	</div><!-- / .row -->
-	            </div><!-- / .dropdown-menu -->
-	          </li><!-- / Pages -->
-
-
-
-	          <!-- Blog -->
+<!-- 訂單 -->
 	          <li class="dropdown dropdown-slide">
-	            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="350" role="button" aria-haspopup="true" aria-expanded="false">Blog <span class="tf-ion-ios-arrow-down"></span></a>
-	            <ul class="dropdown-menu">
-					<li><a href="blog-left-sidebar.html">Blog Left Sidebar</a></li>
-					<li><a href="blog-right-sidebar.html">Blog Right Sidebar</a></li>
-					<li><a href="blog-full-width.html">Blog Full Width</a></li>
-					<li><a href="blog-grid.html">Blog 2 Columns</a></li>
-					<li><a href="blog-single.html">Blog Single</a></li>
-	            </ul>
-	          </li><!-- / Blog -->
+	            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="350" role="button" aria-haspopup="true" aria-expanded="false">訂單 <span class="tf-ion-ios-arrow-down"></span></a>
+		                	<ul class="dropdown-menu">
+		                	<li class="dropdown-header">訂單</li>
+		                	<li role="separator" class="divider"></li>
+								<li><a href="#要放JSP網址">訂單總攬 </a></li>
+								<li><a href="<spring:url value='/viewtocart' />">購物車 </a></li>
+		                	</ul>
+				</li>
+<!-- / 訂單 -->
 
-			<!-- Shop -->
+ <!-- 帳號 -->
 	          <li class="dropdown dropdown-slide">
-	            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="350" role="button" aria-haspopup="true" aria-expanded="false">Elements <span class="tf-ion-ios-arrow-down"></span></a>
+	            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="350" role="button" aria-haspopup="true" aria-expanded="false">帳號 <span class="tf-ion-ios-arrow-down"></span></a>
 	            <ul class="dropdown-menu">
-	              <li><a href="typography.html">Typography</a></li>
-	              <li><a href="buttons.html">Buttons</a></li>
-	              <li><a href="alerts.html">Alerts</a></li>
+	            <li class="dropdown-header">帳號</li>
+	            <li role="separator" class="divider"></li>
+					<li><a href="#要放JSP網址">帳號資訊</a></li>
+					<li><a href="#要放JSP網址">帳號修改</a></li>
+					<li><a href="#要放JSP網址">申請廠商</a></li>
 	            </ul>
-	          </li><!-- / Blog -->
-	        </ul><!-- / .nav .navbar-nav -->
+	          </li>
+<!-- / 帳號 -->
+
+	        </ul><!--/ .nav .navbar-nav -->
 
 	      	</div><!--/.navbar-collapse -->
-	    </div><!-- / .container -->
+	    </div><!--/ .container -->
 	</nav>
 </section>
+
+
+
 
 <section class="page-header">
 	<div class="container">
@@ -321,7 +251,7 @@
                     <tr class="">
                       <td class="">
                         <div class="product-info">
-                          <img width="80" src="images/shop/cart/cart-1.jpg" alt="" />
+                          <img width="80" src="<c:url value='/getPicture/${test.value.productBean.productId}' />" alt="" />
                           <a href="">${test.value.productBean.title}</a>
                         </div>
                       </td>
@@ -367,14 +297,11 @@
 						name="shiptohome" value="結帳:宅配" class="btn btn-main pull-right" style="margin:10px">
 				</form>
 
-				<form method="post" action="<c:url value='/checkout'/>" >
-					<input type="hidden" name="totalprice" value="${sum}" class="btn btn-main pull-right" style="margin:10px"/> <input
-						type="submit" name="checkbyself" id="self" value="結帳:自行取貨" class="btn btn-main pull-right" style="margin:10px">
-				</form>
 
 				<form method="post" action="<c:url value='/backezship'/>" >
 					<input type="hidden" name="totalprice" value="${sum}" class="btn btn-main pull-right"/style="margin:10px"> 
-					<input type="submit" name="ezship" id="self" value="結帳:EZSHIP" class="btn btn-main pull-right" style="margin:10px">
+					<input type="submit" name="ezship" id="self" value="結帳:EZSHIP自行取貨" class="btn btn-main pull-right" style="margin:10px">
+					
 					<input type="hidden" name="seller" value="${ctest.key}"/> 
 					<input type="hidden" name="method" value="shiptohome"/>
 					<input type="hidden" name="fee" value="60"/>

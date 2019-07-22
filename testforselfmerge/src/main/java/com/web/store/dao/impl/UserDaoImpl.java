@@ -5,8 +5,7 @@ import java.util.List;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.query.Query;
-import org.jboss.logging.Param;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -24,25 +23,12 @@ public class UserDaoImpl implements UserDao {
 		String hql = "FROM ShopmemberBean bb WHERE bb.memberid = :memberid";
 		Session session = factory.getCurrentSession();
 		// getSingleResult回傳Object，如果用Bean去接要強制轉型。
-		ShopmemberBean sb = (ShopmemberBean) session.createQuery(hql).setParameter("memberid", memberid)
-				.getSingleResult();
+		ShopmemberBean sb = (ShopmemberBean) session.createQuery(hql).setParameter("memberid", memberid).getSingleResult();
 		if (sb == null)
 			throw new ProductNotFoundException("會員帳號: " + memberid + "找不到");
-		System.out.println("daosb "+sb);
 		return sb;
 	}
 
-//	@Override
-//	public int getProductsmaxcount(int companyId) {
-//	    String hql = "Select count(*) from ProductBean as u where u.companyId=:companyId";
-//	    
-//	    Session session = factory.getCurrentSession();
-//	     @SuppressWarnings("rawtypes")
-//		Query query=session.createQuery(hql);
-//
-//	     return ((Number)query.uniqueResult()).intValue();
-//
-//	}
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<ShopmemberBean> selectAll() {

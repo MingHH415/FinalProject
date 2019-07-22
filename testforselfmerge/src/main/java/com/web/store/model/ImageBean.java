@@ -54,6 +54,7 @@ public class ImageBean implements Serializable {
 	public void setIkey(Integer ikey) {
 		Ikey = ikey;
 	}
+
 	public void setProductId(Integer productId) {
 		this.productId = productId;
 	}

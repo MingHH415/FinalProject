@@ -47,5 +47,19 @@ public class cartService {
 	public List<CartBean> findOrdersByMember(ShopmemberBean shopmemberBean){
 		return cdao.getAllCartsbymember(shopmemberBean);
 	}
+
+	@Transactional
+	public CartBean getCartBeanByCartId(Integer cartID) {
+		return cdao.getCartBeanByCartId(cartID);
+	}
+	@Transactional
+	public List<CartItemBean> getOrderItems(CartBean cb){
+		return idao.getsameorder(cb);
+	}
 	
+	@Transactional
+	public void update(CartBean cb) {
+		cdao.update(cb);
+	}
+
 }

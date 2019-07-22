@@ -12,6 +12,7 @@
 
 <link rel="stylesheet"
 	href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+<<<<<<< HEAD
 <title>product</title>
 
 <!-- Mobile Specific Meta-->
@@ -546,13 +547,65 @@
 								</div>
 							</div>
 							<!-- 					 TAB3 -->
-							<div id="qa" class="tab-pane fade ">
+								<div id="qa" class="tab-pane fade">
+								<h5>${product.title}</t>
+									<span>Questions and Answers</span>
+								</h5>
+								<form method="POST" action="<c:url value='/askquestion'/>">
+									<p>
+										<input type="text" name="question" /> <input type="hidden"
+											name="productId" value="${product.productId}"> <input
+											type="submit" class="btn btn-main btn-small btn-round">
+									</p>
+								</form>
+
 								<div class="post-comments">
-
-									<h6>這裡放問與答內容</h6>
-
+									<ul class="media-list comments-list m-bot-50 clearlist">
+										<!-- Comment Item start 塞問與答對話  -->
+										<c:forEach var="qbean" items="${product.qabean}">
+											<li class="media"><a class="pull-left" href="#"> <img
+													class="media-object comment-avatar"
+													src="images/blog/avater-1.jpg" alt="" width="50"
+													height="50" />
+											</a>
+												<div class="media-body">
+													<div class="comment-info">
+														<h4 class="comment-author">
+															<span>${qbean.account}</span>
+														</h4>
+														<time datetime="2013-04-06T13:53">${qbean.questiondatetime}</time>
+<!-- 														<a class="comment-button" href="#"><i -->
+<!-- 															class="tf-ion-chatbubbles"></i>Reply</a> -->
+													</div>
+													<p>${qbean.question}</p>
+												</div></li>
+											<li class="media"><a class="pull-left" href="#"> <img
+													class="media-object comment-avatar"
+													src="images/blog/avater-1.jpg" alt="" width="50"
+													height="50" />
+											</a>
+												<div class="media-body">
+													<div class="comment-info">
+														<h4 class="comment-author">
+															<span>廠商回復</span>
+														</h4>
+														<time datetime="2013-04-06T13:53">${qbean.answerdatetime}</time>
+<!-- 														<a class="comment-button" href="#"><i -->
+<!-- 															class="tf-ion-chatbubbles"></i>Reply</a> -->
+													</div>
+													<p>${qbean.answer}</p>
+												</div></li>
+											<h5>廠商回覆</h5>
+											<form method="POST" action="<c:url value='/answerquestion'/>">
+												<input type="text" name="answer" /> <input type="hidden"
+													name="productId" value="${product.productId}"> <input
+													type="hidden" name="qaId" value="${qbean.qaId}" /> <input
+													type="submit" class="btn btn-main btn-small btn-round">
+											</form>
+										</c:forEach>
+										<!-- End Comment Item -->
+									</ul>
 								</div>
-
 							</div>
 						</div>
 					</div>
@@ -664,6 +717,7 @@
 			</div>
 		</div>
 	</section>
+
 
 
 

@@ -7,9 +7,8 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-
+import com.web.store.model.CartBean;
 import com.web.store.model.CartItemBean;
-import com.web.store.model.ProductBean;
 @Repository
 public class itemDAO {
 	@Autowired
@@ -28,6 +27,14 @@ public class itemDAO {
 		list = session.createQuery(hql).setParameter("productId", productId).getResultList();
 		if (list!=null) {
 		}
+		return list;
+	}
+	
+	public List<CartItemBean> getsameorder(CartBean cb){
+		List<CartItemBean> list = new ArrayList<>();
+		Session session = factory.getCurrentSession();
+		String hql="From CartItemBean cib where cib.cartBean=:cartBean";
+		list = session.createQuery(hql).setParameter("cartBean", cb).getResultList();
 		return list;
 	}
 	

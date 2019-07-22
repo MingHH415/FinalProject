@@ -112,6 +112,7 @@ public class ProductServiceImpl implements ProductBeanService {
 	
 		return dao.getProductBytitle(title);
 	}
+
   	 
  
 }

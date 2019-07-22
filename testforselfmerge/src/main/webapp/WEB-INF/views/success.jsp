@@ -289,6 +289,7 @@
           <h2 class="text-center">系統已收到您的訂單</h2>
           <p>感謝您的訂購</p>
           <a href="<spring:url value='/products'/>" class="btn btn-main mt-20">繼續購物</a>
+          <a href="<spring:url value='/memberorders'/>" class="btn btn-main mt-20">檢視訂單</a>
         </div>
       </div>
     </div>

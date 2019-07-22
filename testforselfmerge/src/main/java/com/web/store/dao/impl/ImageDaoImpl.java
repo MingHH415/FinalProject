@@ -25,6 +25,7 @@ public class ImageDaoImpl implements ImageDao {
 		System.out.println("dao" + PI);
 		
 		session.save(PI);
+
 	}
 
 	@Override

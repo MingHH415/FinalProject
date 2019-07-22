@@ -271,13 +271,13 @@ public class AioCheckOutController {
 		
 	}
 	
-	@RequestMapping(value = "/aioCheckOut/aioCheckOutOneTime", method = RequestMethod.GET)
-	public ModelAndView aioCheckOutOneTime(){
-		return new ModelAndView("aioCheckOutOneTime", "command", new AioCheckOutOneTime());
-	}
-	
-	
-	@RequestMapping(value = "/aioCheckOut/aioCheckOutOneTime", method = RequestMethod.POST, produces="text/html;charset=UTF-8")
+//	@RequestMapping(value = "/aioCheckOut/aioCheckOutOneTime", method = RequestMethod.GET)
+//	public ModelAndView aioCheckOutOneTime(){
+//		return new ModelAndView("aioCheckOutOneTime", "command", new AioCheckOutOneTime());
+//	}
+//	method = RequestMethod.POST
+//	
+	@RequestMapping(value = "/aioCheckOut/aioCheckOutOneTime",  produces="text/html;charset=UTF-8")
 	public @ResponseBody String aioCheckOutDevide(AioCheckOutOneTime aio,HttpSession session) throws UnsupportedEncodingException{
 		all = new AllInOne("");
 		System.out.println(aio.getRemark());
@@ -300,6 +300,7 @@ public class AioCheckOutController {
 		aio.setTotalAmount(checkoutcart.getTotalprice().toString());
 		aio.setTradeDesc("item desc");
 		aio.setReturnURL("http://localhost:8080/testfinalproject/");
+		aio.setClientBackURL("http://localhost:8080/testfinalproject/");
 		try{
 			String html = all.aioCheckOut(aio, invoice);
 			System.out.println(html);

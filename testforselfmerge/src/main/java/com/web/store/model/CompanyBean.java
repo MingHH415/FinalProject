@@ -9,6 +9,7 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -22,8 +23,10 @@ public class CompanyBean implements Serializable {
 	private String  name;
 	private String  address;
 	private String  url;
+	private String level="普通賣家";
 	@JsonIgnoreProperties("companyBean")
 	private Set<ProductBean> books = new LinkedHashSet<>();
+	private Set<CommentBean> cmb= new LinkedHashSet<>();;
 	
 	public CompanyBean(Integer id, String name, String address, String url) {
 		this.id = id;
@@ -72,6 +75,20 @@ public class CompanyBean implements Serializable {
 
 	public void setUrl(String url) {
 		this.url = url;
+	}
+	@OneToMany
+	@JoinColumn(name="companyId")
+	public Set<CommentBean> getCmb() {
+		return cmb;
+	}
+	public void setCmb(Set<CommentBean> cmb) {
+		this.cmb = cmb;
+	}
+	public String getLevel() {
+		return level;
+	}
+	public void setLevel(String level) {
+		this.level = level;
 	}	
 	
 }

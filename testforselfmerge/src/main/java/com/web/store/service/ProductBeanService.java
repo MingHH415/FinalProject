@@ -28,4 +28,5 @@ public interface ProductBeanService {
 	  public void updateStock(int productId, int newQuantity);
 	  public void deleteProductBean(int productId);
 	  public ProductBean getProductBytitle(String title);
+
 }

@@ -2,15 +2,17 @@
 
 import java.io.Serializable;
 import java.sql.Blob;
-import java.sql.Clob;
+import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
@@ -200,6 +202,8 @@ public class ProductBean implements Serializable {
 	@JsonIgnoreProperties("products")
 	private ProductBean productBean;
 //	private Integer 	productId ;
+	private CompanyBean companyBean;
+	private List<QaBean> qabean;
 	
 	public ProductBean(Integer productId, String title, String author, Double price, Double discount, Blob coverImage,
 			String fileName, Blob image2, Blob image3, Blob image4, String fileName2, String fileName3,
@@ -231,6 +235,7 @@ public class ProductBean implements Serializable {
 		this.productImage4 = productImage4;
 		this.companyBean = companyBean;
 		this.priceStr = priceStr;
+		
 	}
 
 	@Override
@@ -306,7 +311,7 @@ public class ProductBean implements Serializable {
 		this.discountStr = discountStr;
 	}
 
-	private CompanyBean companyBean;
+
 
 	@Transient
 	public MultipartFile getProductImage() {
@@ -475,8 +480,9 @@ public class ProductBean implements Serializable {
 		this.price = price;
 	}
 
-	@ManyToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "FK_CompanyBean_Id")
+
+	@ManyToOne(cascade=CascadeType.ALL)
+	@JoinColumn(name="FK_CompanyBean_Id") 
 	public CompanyBean getCompanyBean() {
 		return companyBean;
 	}
@@ -484,7 +490,16 @@ public class ProductBean implements Serializable {
 	public void setCompanyBean(CompanyBean companyBean) {
 		this.companyBean = companyBean;
 	}
+	
+	@OneToMany(fetch = FetchType.EAGER,cascade=CascadeType.ALL)
+	@JoinColumn(name="productId")
+	public List<QaBean> getQabean() {
+		return qabean;
+	}
 
+	public void setQabean(List<QaBean> qabean) {
+		this.qabean = qabean;
+	}
 //	public Clob getPddetail() {
 //		return pddetail;
 //	}
@@ -492,4 +507,8 @@ public class ProductBean implements Serializable {
 //	public void setPddetail(Clob pddetail) {
 //		this.pddetail = pddetail;
 //	}
+
+
+
+
 }

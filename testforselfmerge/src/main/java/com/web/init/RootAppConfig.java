@@ -28,7 +28,7 @@ public class RootAppConfig {
 		} catch (PropertyVetoException e) {
 			e.printStackTrace();
 		}
-		ds.setJdbcUrl("jdbc:sqlserver://localhost:1433;databaseName=shopweb1");
+		ds.setJdbcUrl("jdbc:sqlserver://localhost:1433;databaseName=shopweb3");
 		ds.setInitialPoolSize(10);
 		ds.setMaxPoolSize(20);
 		ds.setMinPoolSize(5);

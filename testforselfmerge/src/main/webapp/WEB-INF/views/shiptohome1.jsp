@@ -43,18 +43,17 @@
 		</tr>
 		<c:set value="${sum +test.value.quantity*test.value.price}" var="sum"/>
 		</c:forEach>
-		</tbody>
-		</table>
-		<hr>
-		<form>
+
 		<tr><th>付款方式</th></tr>
 		<tr><td>先行支付</td><td><input type="radio" name="paymethod" value="1"/></td></tr>
-		<tr><td>貨到付款</td><in><input type="radio" name="paymethod" value="0"/></tr>
-		</form>
+		<tr><td>貨到付款</td><td><input type="radio" name="paymethod" value="0"/></td></tr>
+		</tbody>
+		</table>
 		<p>total price =${sum+120}</p>
 		<input type="hidden" name="totalprice" value="${sum+120}"/>
 		<input type="submit" /><br>
-</form>
+		</form>
+
 </div>
 </body>
 </html>

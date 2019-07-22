@@ -83,7 +83,8 @@
 				<div class="col-md-4 col-xs-12 col-sm-4">
 					<!-- Cart -->
 					<ul class="top-menu text-right list-inline">
-						<li class="dropdown cart-nav dropdown-slide"><a href="#"
+
+	          <li class="dropdown cart-nav dropdown-slide"><a href="#"
 							class="dropdown-toggle" data-toggle="dropdown"
 							data-hover="dropdown"><i class="tf-ion-android-cart"></i>Cart</a>
 							<div class="dropdown-menu cart-dropdown">
@@ -91,7 +92,7 @@
 								<c:forEach var='test' items='${now.cartitemmap}'>
 								<div class="media">
 									<a class="pull-left" href="#"> 
-									<img class="media-object"src="images/shop/cart/cart-2.jpg" alt="image" />
+									<img class="media-object"src="<c:url value='/getPicture/${test.value.productBean.productId}' />" alt="image" />
 									</a>
 									<div class="media-body">
 										<h4 class="media-heading">
@@ -115,35 +116,22 @@
 									<span>Total</span> <span class="total-price">${sum}</span>
 								</div>
 								<ul class="text-center cart-buttons">
-									<li><a href="" class="btn btn-small">View Cart</a></li>
+									<li><a href="<spring:url value='/viewtocart' />" class="btn btn-small">View Cart</a></li>
 									<li><a href="" class="btn btn-small btn-solid-border">Checkout</a></li>
 								</ul>
-							</div></li>
-						<!-- / Cart -->
+							</div></li><!-- / Cart -->
 
-						<!-- Search -->
-						<li class="dropdown search dropdown-slide"><a href="#"
-							class="dropdown-toggle" data-toggle="dropdown"
-							data-hover="dropdown"><i class="tf-ion-ios-search-strong"></i>
-								Search</a>
-							<ul class="dropdown-menu search-dropdown">
-								<li><form action="post">
-										<input type="search" class="form-control"
-											placeholder="Search...">
-									</form></li>
-							</ul></li>
-						<!-- / Search -->
+	          <!-- Search -->
+	          <li class="dropdown search dropdown-slide">
+	            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"><i class="tf-ion-ios-search-strong"></i> Search</a>
+	            <ul class="dropdown-menu search-dropdown">
+	            </ul>
+	          </li>
+	          <!-- / Search -->
 
-						<!-- Languages -->
-						<li class="commonSelect"><select class="form-control">
-								<option>EN</option>
-								<option>DE</option>
-								<option>FR</option>
-								<option>ES</option>
-						</select></li>
-						<!-- / Languages -->
+	
 
-					</ul>
+	        </ul>
 					<!-- / .nav .navbar-nav .navbar-right -->
 				</div>
 			</div>
@@ -173,146 +161,58 @@
 				<div id="navbar" class="navbar-collapse collapse text-center">
 					<ul class="nav navbar-nav">
 
-						<!-- Home -->
-						<li class="dropdown "><a href="index.html">Home</a></li>
-						<!-- / Home -->
+						<!-- Home首頁 -->
+	          <li class="dropdown ">
+	            <a href="index.html">Home</a>
+	          </li><!-- / Home -->
 
 
-						<!-- Elements -->
-						<li class="dropdown dropdown-slide"><a href="#"
-							class="dropdown-toggle" data-toggle="dropdown"
-							data-hover="dropdown" data-delay="350" role="button"
-							aria-haspopup="true" aria-expanded="false">Shop <span
-								class="tf-ion-ios-arrow-down"></span></a>
-							<div class="dropdown-menu">
-								<div class="row">
+	       <!-- 商品 -->   
+	          <li class="dropdown dropdown-slide">
+	            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="350" role="button" aria-haspopup="true" aria-expanded="false">商品 <span class="tf-ion-ios-arrow-down"></span></a>
+	                	<ul class="dropdown-menu">
+							<li class="dropdown-header">商品</li>
+							<li role="separator" class="divider"></li>
+							<li><a href="#要放JSP網址">全部商品</a></li>
+							<li><a href="#要放JSP網址">廠牌搜索</a></li>
+							<li><a href="#要放JSP網址">比較商品</a></li>
+							<li><a href="#要放JSP網址">進階搜索</a></li>
+	                	</ul>
+	              
+			</li>
+<!-- / 商品 -->	
 
-									<!-- Basic -->
-									<div class="col-lg-6 col-md-6 mb-sm-3">
-										<ul>
-											<li class="dropdown-header">Pages</li>
-											<li role="separator" class="divider"></li>
-											<li><a href="shop.html">Shop</a></li>
-											<li><a href="checkout.html">Checkout</a></li>
-											<li><a href="cart.html">Cart</a></li>
-											<li><a href="pricing.html">Pricing</a></li>
-											<li><a href="confirmation.html">Confirmation</a></li>
+<!-- 訂單 -->
+	          <li class="dropdown dropdown-slide">
+	            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="350" role="button" aria-haspopup="true" aria-expanded="false">訂單 <span class="tf-ion-ios-arrow-down"></span></a>
+		                	<ul class="dropdown-menu">
+		                	<li class="dropdown-header">訂單</li>
+		                	<li role="separator" class="divider"></li>
+								<li><a href="#要放JSP網址">訂單總攬 </a></li>
+								<li><a href="<spring:url value='/viewtocart' />">購物車 </a></li>
+		                	</ul>
+				</li>
+<!-- / 訂單 -->
 
-										</ul>
-									</div>
+ <!-- 帳號 -->
+	          <li class="dropdown dropdown-slide">
+	            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="350" role="button" aria-haspopup="true" aria-expanded="false">帳號 <span class="tf-ion-ios-arrow-down"></span></a>
+	            <ul class="dropdown-menu">
+	            <li class="dropdown-header">帳號</li>
+	            <li role="separator" class="divider"></li>
+					<li><a href="#要放JSP網址">帳號資訊</a></li>
+					<li><a href="#要放JSP網址">帳號修改</a></li>
+					<li><a href="#要放JSP網址">申請廠商</a></li>
+	            </ul>
+	          </li>
+<!-- / 帳號 -->
 
-									<!-- Layout -->
-									<div class="col-lg-6 col-md-6 mb-sm-3">
-										<ul>
-											<li class="dropdown-header">Layout</li>
-											<li role="separator" class="divider"></li>
-											<li><a href="product-single.html">Product Details</a></li>
-											<li><a href="shop-sidebar.html">Shop With Sidebar</a></li>
+	        </ul><!--/ .nav .navbar-nav -->
 
-										</ul>
-									</div>
-
-								</div>
-								<!-- / .row -->
-							</div> <!-- / .dropdown-menu --></li>
-						<!-- / Elements -->
-
-
-						<!-- Pages -->
-						<li class="dropdown full-width dropdown-slide"><a href="#"
-							class="dropdown-toggle" data-toggle="dropdown"
-							data-hover="dropdown" data-delay="350" role="button"
-							aria-haspopup="true" aria-expanded="false">Pages <span
-								class="tf-ion-ios-arrow-down"></span></a>
-							<div class="dropdown-menu">
-								<div class="row">
-
-									<!-- Introduction -->
-									<div class="col-sm-3 col-xs-12">
-										<ul>
-											<li class="dropdown-header">Introduction</li>
-											<li role="separator" class="divider"></li>
-											<li><a href="contact.html">Contact Us</a></li>
-											<li><a href="about.html">About Us</a></li>
-											<li><a href="404.html">404 Page</a></li>
-											<li><a href="coming-soon.html">Coming Soon</a></li>
-											<li><a href="faq.html">FAQ</a></li>
-										</ul>
-									</div>
-
-									<!-- Contact -->
-									<div class="col-sm-3 col-xs-12">
-										<ul>
-											<li class="dropdown-header">Dashboard</li>
-											<li role="separator" class="divider"></li>
-											<li><a href="dashboard.html">User Interface</a></li>
-											<li><a href="order.html">Orders</a></li>
-											<li><a href="address.html">Address</a></li>
-											<li><a href="profile-details.html">Profile Details</a></li>
-										</ul>
-									</div>
-
-									<!-- Utility -->
-									<div class="col-sm-3 col-xs-12">
-										<ul>
-											<li class="dropdown-header">Utility</li>
-											<li role="separator" class="divider"></li>
-											<li><a href="login.html">Login Page</a></li>
-											<li><a href="signin.html">Signin Page</a></li>
-											<li><a href="forget-password.html">Forget Password</a></li>
-										</ul>
-									</div>
-
-									<!-- Mega Menu -->
-									<div class="col-sm-3 col-xs-12">
-										<a href="shop.html"> <img class="img-responsive"
-											src="images/shop/header-img.jpg" alt="menu image" />
-										</a>
-									</div>
-								</div>
-								<!-- / .row -->
-							</div> <!-- / .dropdown-menu --></li>
-						<!-- / Pages -->
-
-
-
-						<!-- Blog -->
-						<li class="dropdown dropdown-slide"><a href="#"
-							class="dropdown-toggle" data-toggle="dropdown"
-							data-hover="dropdown" data-delay="350" role="button"
-							aria-haspopup="true" aria-expanded="false">Blog <span
-								class="tf-ion-ios-arrow-down"></span></a>
-							<ul class="dropdown-menu">
-								<li><a href="blog-left-sidebar.html">Blog Left Sidebar</a></li>
-								<li><a href="blog-right-sidebar.html">Blog Right
-										Sidebar</a></li>
-								<li><a href="blog-full-width.html">Blog Full Width</a></li>
-								<li><a href="blog-grid.html">Blog 2 Columns</a></li>
-								<li><a href="blog-single.html">Blog Single</a></li>
-							</ul></li>
-						<!-- / Blog -->
-
-						<!-- Shop -->
-						<li class="dropdown dropdown-slide"><a href="#"
-							class="dropdown-toggle" data-toggle="dropdown"
-							data-hover="dropdown" data-delay="350" role="button"
-							aria-haspopup="true" aria-expanded="false">Elements <span
-								class="tf-ion-ios-arrow-down"></span></a>
-							<ul class="dropdown-menu">
-								<li><a href="typography.html">Typography</a></li>
-								<li><a href="buttons.html">Buttons</a></li>
-								<li><a href="alerts.html">Alerts</a></li>
-							</ul></li>
-						<!-- / Blog -->
-					</ul>
-					<!-- / .nav .navbar-nav -->
-
-				</div>
-				<!--/.navbar-collapse -->
-			</div>
-			<!-- / .container -->
-		</nav>
-	</section>
+	      	</div><!--/.navbar-collapse -->
+	    </div><!--/ .container -->
+	</nav>
+</section>
 	<section class="page-header">
 		<div class="container">
 			<div class="row">
@@ -328,26 +228,34 @@
 			</div>
 		</div>
 	</section>
-	<div class="page-wrapper">
-		<form method="post" action="<c:url value='/checkout'/>">
+		<div class="page-wrapper">
+	<form method="post" action="<c:url value='/checkout'/>">
 			<div class="checkout shopping">
 				<div class="container">
 					<div class="row">
 						<div class="col-md-8">
 							<div class="block billing-details">
-								<h4 class="widget-title">寄送明細(宅配)</h4>
+								<h4 class="widget-title">寄送明細</h4>
 								<form class="checkout-form">
 									<div class="form-group">
-										<label for="full_name">姓名</label> <input type="text"
-											class="form-control" id="full_name" placeholder="">
+										<label>姓名</label> <input type="text" class="form-control"
+											id="full_name" name="receiver">
 									</div>
 									<div class="form-group">
-										<label for="user_address">地址</label> <input type="text"
-											class="form-control" id="user_address" placeholder="">
+										<label>電話</label> <input type="text" class="form-control"
+											id="user_address" name="receiverphone">
 									</div>
 									<div class="form-group">
-										<label for="user_address">電話</label> <input type="text"
-											class="form-control" id="user_address" placeholder="">
+										<label>地址</label> <input type="text" class="form-control"
+											id="user_country" name="address">
+									</div>
+									<div class="form-group">
+										<input type="hidden" class="form-control" id="user_method"
+											name="method" value="運送方式 : 宅配">
+									</div>
+									<div class="form-group">
+										<input type="hidden" class="form-control"
+											id="user_shippingfee" name="shippingfee" value="120" />
 									</div>
 								</form>
 							</div>
@@ -355,26 +263,26 @@
 						<div class="col-md-4">
 							<div class="product-checkout-details">
 								<div class="block">
-									<h4 class="widget-title">訂單明細</h4>
-									<c:set value="0" var="sum" />
+									<h4 class="widget-title">購物車明細廠商 ${sellerID}的所有商品</h4>
 									<div class="media product-card">
 										<c:forEach var='test' items='${now.cartitemmap}'>
-											<a class="pull-left" href="product-single.html"> <img
-												class="media-object" src="images/shop/cart-1.jpg"
-												alt="Image" />
+											<a class="pull-left" href="#"> <img class="media-object"
+												src="<c:url value='/getPicture/${test.value.productBean.productId}' />" alt="Image" />
 											</a>
 											<div class="media-body">
 												<h4 class="media-heading">
-													<a href="">${test.value.productBean.title}</a>
+													<a href="#">${test.value.productBean.title}</a>
 												</h4>
-												<p class="price">${test.value.quantity}*${test.value.price}</p>
-												<span class="remove">刪除</span>
+												<input type="hidden" name="adjust"
+													value="${test.value.quantity}"> <input
+													type="hidden" name='adjustId'
+													value='${test.value.productBean.productId}' />
+												<p class="price">$${test.value.quantity}*${test.value.price}</p>
+												<input type="hidden" name='removeId' value='${test.value.productBean.productId}'/>
+												<span class="remove">Remove</span>
 											</div>
-											<c:set value="${sum +test.value.quantity*test.value.price}"
-												var="sum" />
 										</c:forEach>
 									</div>
-
 									<div class="discount-code">
 										<p>
 											折扣券? <a data-toggle="modal" data-target="#coupon-modal"
@@ -384,23 +292,40 @@
 									<ul class="summary-prices">
 										<li><span>Subtotal:</span> <span class="price">${sum}</span>
 										</li>
-										<li><span>Shipping:</span> <span>120</span></li>
+										<li><span>Shipping:</span> <span>$120</span></li>
 									</ul>
 									<div class="summary-total">
-										<span>Total</span> <span>${sum+120}</span>
+										<span>Total</span> <span>$${sum+120}</span> <input
+											type="hidden" name="totalprice" value="${sum+120}" />
 									</div>
+									<c:set value="${sum +test.value.quantity*test.value.price}"
+										var="sum" />
 									<br>
+									<tr>
+										<th>付款方式</th>
+									</tr>
+									<div style="float: right">
+										<tr>
+											<td>先行支付</td>
+											<td><input type="radio" name="paymethod" value="1" /></td>
+										</tr>
+										<tr>
+											<td>貨到付款</td>
+											<in> <input type="radio" name="paymethod" value="0" />
+										</tr>
+									</div>
 								</div>
+
+								<input type="submit" style="float: right"
+									class="btn btn-main pull-right" value="結帳" /><br>
+
 							</div>
 						</div>
-						<a href="<spring:url value='<!--綠界金流-->'/>"
-							class="btn btn-main pull-right" style="margin-top: 10px"> <span>結帳</span>
-						</a>
 					</div>
 				</div>
 			</div>
-		</form>
-	</div>
+	</form>
+		</div>
 	<!-- Modal -->
 	<div class="modal fade" id="coupon-modal" tabindex="-1" role="dialog">
 		<div class="modal-dialog" role="document">
@@ -505,8 +430,5 @@
 
 	<!-- Main Js File -->
 	<script src="js/script.js"></script>
-
-
-
 </body>
 </html>

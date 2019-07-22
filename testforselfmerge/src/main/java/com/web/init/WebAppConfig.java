@@ -42,13 +42,14 @@ public class WebAppConfig extends WebMvcConfigurerAdapter {
 		return resource;
 	}
 	
+
+	
 	@Override
 	// 應用系統必須透過ResourceHandlerRegistry的輔助，以便處理靜態檔案：
 	// 只要請求路徑是以/css/開頭的任何請求，都轉到/WEB-INF/views/css/去尋找
 	// 只要請求路徑是以/image/開頭的任何請求，都轉到/WEB-INF/views/images/去尋找
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
 		registry.addResourceHandler("/css/**").addResourceLocations("/WEB-INF/views/css/");
-		registry.addResourceHandler("/products/**").addResourceLocations("/WEB-INF/views/products/");
 		registry.addResourceHandler("/images/**").addResourceLocations("/WEB-INF/views/images/");
 		registry.addResourceHandler("/resources/**").addResourceLocations("/WEB-INF/views/resources/");
 		registry.addResourceHandler("/js/**").addResourceLocations("/WEB-INF/views/js/");
@@ -59,10 +60,7 @@ public class WebAppConfig extends WebMvcConfigurerAdapter {
 		registry.addResourceHandler("/scss/**").addResourceLocations("/WEB-INF/views/scss/");
 		registry.addResourceHandler("/plugins/**").addResourceLocations("/WEB-INF/views/plugins/");
 		registry.addResourceHandler("/type/**").addResourceLocations("/WEB-INF/views/type/");
-		registry.addResourceHandler("/font/**").addResourceLocations("/WEB-INF/views/font/");
-
-//		registry.addResourceHandler("/less/**").addResourceLocations("/WEB-INF/views/less/");
-//		registry.addResourceHandler("/assets/**").addResourceLocations("/WEB-INF/views/assets/");
+	
 	}
 	
 	@Bean

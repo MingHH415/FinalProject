@@ -6,7 +6,7 @@ public interface UserService {
 	
 	public ShopmemberBean findByAccount(String memberid);
 	public ShopmemberBean login(String memberid, String password);
-	int saveMember(ShopmemberBean sb);
-	
+	int saveMember(ShopmemberBean sb);	
 //	public int getProductsmaxcount(int compandyId);
+
 }

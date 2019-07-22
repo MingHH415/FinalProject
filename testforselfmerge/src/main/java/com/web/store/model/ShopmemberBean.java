@@ -39,19 +39,6 @@ public class ShopmemberBean implements Serializable {
 	private String role;
 
 	private String Status;
-	private int productqty;
-	
-	public int getProductqty() {
-		return productqty;
-	}
-
-	public void setProductqty(int productqty) {
-		this.productqty = productqty;
-	}
-
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}
 
 	private Set<CartBean> cartBean=new HashSet<>();
 
@@ -94,10 +81,7 @@ public class ShopmemberBean implements Serializable {
 
 	@Override
 	public String toString() {
-		return "ShopmemberBean [seqNo=" + seqNo + ", memberid=" + memberid + ", password=" + password + ", username="
-				+ username + ", email=" + email + ", phone=" + phone + ", permission=" + permission + ", registeddate="
-				+ registeddate + ", unpaid=" + unpaid + ", role=" + role + ", Status=" + Status + ", productqty="
-				+ productqty + ", cartBean=" + cartBean + "]";
+		return "userid=" + memberid + " password=" + password;
 	}
 
 	public String getPassword() {
@@ -181,9 +165,6 @@ public class ShopmemberBean implements Serializable {
 	public void setCartBean(Set<CartBean> cartBean) {
 		this.cartBean = cartBean;
 	}
-
-
-	
 
 
 }

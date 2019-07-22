@@ -69,7 +69,7 @@ public class LoginController {
 		
 		map.addAttribute("session", memberid);
 		model.addAttribute("login", sb);
-		session.setAttribute("memberbean",userid);
+		session.setAttribute("memberbean",sb);
 		System.out.println("sessionkey"+session);
 
 		return "redirect:/back2";// redirect重新整理跳轉指定頁面:welcome
@@ -81,8 +81,7 @@ public class LoginController {
 	@RequestMapping("/back2")
 	public String getsession(HttpSession session,Model model)
 	{
-	Object name = session.getAttribute("memberbean");
-	ShopmemberBean info1=userService.findByAccount(name.toString());
+		ShopmemberBean info1 = (ShopmemberBean)session.getAttribute("memberbean");
 	int comapnyId=info1.getSeqNo();
 	List<ProductBean> ff=(Service.getProductByCompanyid(comapnyId));
 	int findlist=ff.size();

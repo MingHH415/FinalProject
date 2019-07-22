@@ -45,6 +45,7 @@ public class CartController {
 	public String addtocart(@RequestParam(value="productId")Integer productId,
 			@RequestParam(value="price")Float price,
 			@RequestParam(value="quantity", defaultValue="1") int quantity,
+			@RequestParam(value="position") int position ,
 			RedirectAttributes redirectAttributes,Model model,HttpSession session) {
 		ProductBean pb =service.getProductById(productId);
 		String seller= pb.getCompanyBean().getId().toString();
@@ -53,15 +54,6 @@ public class CartController {
 			mapcartbean =new HashMap<String,CartBean>();
 			session.setAttribute("shopCart", mapcartbean);
 		}	
-//		// 取出存放在session物件內的ShoppingCart物件
-//		CartBean cart = (CartBean)session.getAttribute(seller);
-//		// 如果找不到ShoppingCart物件
-//		if (cart == null) {
-//		// 就新建ShoppingCart物件
-//		cart = new CartBean();
-//		// 並將此新建ShoppingCart的物件放到session物件內，成為它的屬性物件
-//		session.setAttribute(seller, cart);
-//		}
 		CartBean cart = null;
 		if(mapcartbean.get(seller)==null) {
 			cart  = new CartBean();
@@ -89,35 +81,17 @@ public class CartController {
 			thecart.put(productId.toString(), cib);
 		}
 		
-		//所有的cartitem
-//		Set<Integer> set = cart.getCartitemmap().keySet();
-//		int totalprice=0;
-//		for(int n : set){
-//			System.out.println(n);
-//			intprice=cartitem.get(n).getPrice();
-//			quantity=cartitem.get(n).getQuantity();
-//			totalprice +=  intprice * quantity;
-//		}
-//		cart.setTotalprice(totalprice);
-		
 		System.out.println(thecart+"這是TheCART");
 		cart.setCartitemmap(thecart);
 		System.out.println(cart+"這是CART");
 		mapcartbean.put(seller, cart);
 		System.out.println(mapcartbean+"這是mapcartbean");
 		session.setAttribute("shopCart", mapcartbean);
-//		session.setAttribute("cartitem", cart.getCartitemmap());
-//		session.setAttribute("productId", productId);
-//		session.setAttribute("prdouctname",pb.getTitle());
-//		for (Object key : cart.getCartitemmap().keySet()) {
-//            System.out.println(key + " : " + cart.getCartitemmap().get(key));
-//        }
-//		session.setAttribute("ses",cart.getCartitemmap().get(productId.toString()).getPrice());
-//		session.setAttribute("ses2",cart.getCartitemmap().get(productId.toString()).getQuantity());
-		//service2.addcart(cib)
+		if(position==0) {
+			return "redirect:/products";
+		}
 		redirectAttributes.addAttribute("id", productId);
 		return "redirect:/product";
-//		return "shopcart";
 	}
 	
 	@RequestMapping(value="/viewtocart")

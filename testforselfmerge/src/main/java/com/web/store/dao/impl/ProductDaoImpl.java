@@ -178,8 +178,10 @@ public class ProductDaoImpl implements ProductDao {
 		    cb = session.get(ProductBean.class, title);
 		    return cb;
 	}
+
+
+
 	
 	
-	}
-	
+}
 

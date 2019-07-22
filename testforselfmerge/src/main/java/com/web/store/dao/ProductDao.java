@@ -14,6 +14,7 @@ public interface ProductDao {
 
 	List<String>  getAllCategories();
 	List<ProductBean>  getProductsByCategory(String category);
+
 	List<ProductBean> getProductByCompanyid(int companyId) ;
 	public ProductBean getProductById(int productId);
 	void update(ProductBean product );
@@ -25,4 +26,5 @@ public interface ProductDao {
 	public ProductBean  getProductBytitle(String title);
 	List<ProductBean>  getAllProductsByPages(int pageid, int total);
 	public void deleteProductBean(int productId);
+
 }

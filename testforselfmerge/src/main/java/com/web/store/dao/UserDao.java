@@ -13,6 +13,7 @@ public interface UserDao {
 	public abstract ShopmemberBean update(ShopmemberBean bean);
 	public abstract ShopmemberBean updateBasic(String password, String username, String email, String phone);
 
+
 //	public int getProductsmaxcount(int companyId);
-	
+
 }

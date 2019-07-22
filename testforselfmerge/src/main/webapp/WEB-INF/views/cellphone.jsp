@@ -146,6 +146,7 @@
 					data-parent="#accordionSidebar">
 					<div class="bg-white py-2 collapse-inner rounded">
 						<h6 class="collapse-header">產品:</h6>
+<<<<<<< HEAD
 						<a class="collapse-item" href="products">全部商品</a> <a
 							class="collapse-item" href="addProduct">產品上架</a>
 						<!--             <a class="collapse-item" href="/products/add">產品上架</a> -->
@@ -521,6 +522,7 @@
 							<div class="form-group">
 								<label class="control-label col-lg-2 col-lg-2" for='brand'>
 									嵌入影片 </label>
+
 								<div class="col-lg-10">
 									<form:input id="brand" path="brand" type='text'
 										class='form:input-large' />

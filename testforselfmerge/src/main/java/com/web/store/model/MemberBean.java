@@ -5,11 +5,16 @@ import java.sql.Blob;
 import java.sql.Clob;
 import java.sql.Timestamp;
 
+import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 @Entity
 @Table(name="Member")
@@ -29,6 +34,19 @@ public class MemberBean implements Serializable {
 	Clob comment;
 	String fileName;
 	Double unpaid_amount;
+	Set<QaBean> qabean;
+
+	@OneToMany(cascade=CascadeType.ALL)
+	@JoinColumn(name="memberId")
+	public Set<QaBean> getQabean() {
+		return qabean;
+	}
+
+
+	public void setQabean(Set<QaBean> qabean) {
+		this.qabean = qabean;
+	}
+
 
 	public MemberBean(Integer pKey, String memberId, String name, String password, String address, String email,
 			String tel, String userType, Timestamp registerTime, Double totalAmt, Double unpaid_amount,
