@@ -46,8 +46,6 @@ public class ImageBean implements Serializable {
 	}
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	
-	
 	public Integer getIkey() {
 		return Ikey;
 	}
